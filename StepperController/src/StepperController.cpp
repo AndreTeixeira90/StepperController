@@ -19,6 +19,7 @@ void StepperController::step(int step){
  *  s1= coil 1, s2= coil 2, s3= !s2, s4=!s1
  */
 void StepperController::getState(int *s1, int *s2){
+    printf("%d ",state%4 );
     *s1= states[state%4][0];
     *s2= states[state%4][1];
 }
@@ -27,7 +28,7 @@ void StepperController::getState(int *s1, int *s2){
   * direction: {-1,0,1}
   */
 bool StepperController::move(unsigned char speed, char direction, unsigned long time){
-    if( lastupdate - 21*speed+7058 <= time){
+    if( lastupdate + (-21*speed+7058) <= time){
         step(direction);
         lastupdate= time;
         return true;

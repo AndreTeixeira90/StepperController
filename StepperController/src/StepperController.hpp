@@ -30,8 +30,8 @@ public:
     bool move(unsigned char speed, char direction, unsigned long time);
     
 private:
-    char state= 0;
-    char states[4][2]={1,1,0,1,0,0,1,0};
+    unsigned char state= 0;
+    char states[4][2]={{1,1},{0,1},{0,0},{1,0}};
     unsigned long lastupdate= 0;
 };
 
