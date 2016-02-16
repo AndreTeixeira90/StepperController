@@ -19,7 +19,6 @@ void StepperController::step(int step){
  *  s1= coil 1, s2= coil 2, s3= !s2, s4=!s1
  */
 void StepperController::getState(int *s1, int *s2){
-    printf("%d ",state%4 );
     *s1= states[state%4][0];
     *s2= states[state%4][1];
 }
